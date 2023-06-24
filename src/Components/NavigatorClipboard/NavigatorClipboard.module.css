@@ -1,0 +1,15 @@
+.root {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  padding: 15px;
+  gap: 15px;
+}
+.root > * {
+  padding: 5px;
+  border: none;
+  background-color: #FDA610;
+}
+.root > *:hover {
+  background-color: #FAB82E;
+  transition: 0.3s;
+}
