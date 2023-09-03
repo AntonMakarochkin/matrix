@@ -40,8 +40,8 @@ function LocalSessionStorage({ className }) {
     request.onsuccess = () => {
       let db = request.result;
       const transition = db.transaction('fileStore', "readwrite");
-      let books = transition.objectStore("fileStore");
-      books.add({
+      let store = transition.objectStore("fileStore");
+      store.add({
         id: localCounter,
         price: 100,
         created: new Date()

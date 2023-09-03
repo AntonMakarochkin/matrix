@@ -1,0 +1,16 @@
+.back_container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.back_container > button{
+  width: 100px;
+  height: 35px;
+  border-radius: 4px;
+  border: none;
+  background-color: #FDA610;
+  cursor: pointer;
+}
+.back_container > button:hover{
+  background-color: #FAB82E;
+}

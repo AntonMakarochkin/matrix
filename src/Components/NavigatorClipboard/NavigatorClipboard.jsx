@@ -16,7 +16,7 @@ function NavigatorClipboard() {
   };
 
   const handleCopyInput = () => {
-    navigator.clipboard.readText().then((ev) => setCopy(ev))
+    navigator.clipboard.readText().then((e) => setCopy(e))
   };
  
 

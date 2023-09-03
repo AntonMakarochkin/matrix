@@ -1,17 +1,31 @@
-import BrowserApiHistory from './Components/BrowserApiHistory'
-import LocalSessionStorage from './Components/LocalSessionStorage';
+import { Routes, Route, Link } from "react-router-dom";
+import { Suspense } from 'react';
+import { lazy } from 'react';
 
-import './App.css'; // глобальные стимли тут
-import NavigatorClipboard from './Components/NavigatorClipboard';
+import Home from "./Pages/Home";
 
+import "./App.css"; // глобальные стили тут
 
 function App() {
+  const History = lazy(() => import('./Pages/History'));
 
   return (
     <div className="App">
-      <BrowserApiHistory />
-      <LocalSessionStorage />
-      <NavigatorClipboard />
+      <div className="header">
+        <Link to="/">home</Link>
+        <Link to="/history">history</Link>
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/history"
+          element={
+            <Suspense fallback={<h1>loading</h1>}>
+              <History />
+            </Suspense>
+          }
+        />
+      </Routes>
     </div>
   );
 }
